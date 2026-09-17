@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.2
+
+- Added lightweight socket sender validation so accidental or malformed non-GM `STATE` / `OPEN_WINDOW` messages cannot replace the shared clash state or force windows open.
+- Fixed the GM Clash window remaining visible after archiving and closing a clash.
+- Fixed the resolution-order selector becoming unreadable on narrow windows.
+- Kept the intentionally simple trusted-table synchronization model: hidden plans remain synchronized as shared state and are hidden by the UI rather than by anti-cheat transport.
+
 ## 0.1.1
 
 - Fixed Foundry module socket registration so Clash state reaches player clients.

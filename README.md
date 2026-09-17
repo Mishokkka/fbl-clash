@@ -4,6 +4,10 @@ Rules-light hidden-combination interface for **Foundry VTT v13.351** and **Forbi
 
 FBL-Clash deliberately does **not** roll dice, spend actions, inspect talents, or decide rules. It provides a synchronized table for hidden declarations, reveals, and a GM-controlled resolution queue.
 
+### Trust model
+
+FBL-Clash is built for a trusted home table. Hidden declarations are hidden by the interface, not by an anti-cheat or cryptographic transport layer. This keeps synchronization simple and resilient. A player deliberately inspecting module state in the browser developer console could read unrevealed declarations.
+
 ## Installation
 
 Copy the `fbl-clash` folder into:

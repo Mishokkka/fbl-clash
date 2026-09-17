@@ -2,7 +2,7 @@
   "id": "fbl-clash",
   "title": "FBL-Clash",
   "description": "Hidden simultaneous combat declarations and a shared resolution board for Forbidden Lands. Rules-light by design: the module never rolls or resolves game mechanics for you.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "authors": [
     {
       "name": "Mishokkka"

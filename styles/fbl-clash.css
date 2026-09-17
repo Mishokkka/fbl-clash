@@ -566,7 +566,7 @@
   .fbl-clash-column-heads,
   .fbl-clash-step { grid-template-columns: 1fr 56px 1fr; gap: 6px; }
   .fbl-clash-step-center { padding: 6px 3px; }
-  .fbl-clash-order-select { font-size: 0; }
+  .fbl-clash-order-select { font-size: 10px; }
   .fbl-clash-order-select option { font-size: 10px; }
   .fbl-clash-launcher,
   .fbl-clash-extra-form { grid-template-columns: 1fr; }

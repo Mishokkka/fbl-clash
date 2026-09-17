@@ -447,7 +447,15 @@ class ClashManager {
   async onSocket(message) {
     if (!message?.type) return;
 
+    // Basic trust guard for the shared module socket. This is intentionally
+    // lightweight: FBL-Clash is designed for a trusted table, but malformed
+    // or accidental messages from unknown/non-GM clients should not replace
+    // the shared clash state or force windows open.
+    const sender = game.users.get(message.senderId);
+    if (!sender) return;
+
     if (message.type === "STATE") {
+      if (!sender.isGM) return;
       const incoming = message.payload?.state;
       this.state = incoming?.id ? deepClone(incoming) : null;
       if (!this.state) {
@@ -460,6 +468,7 @@ class ClashManager {
     }
 
     if (message.type === "OPEN_WINDOW") {
+      if (!sender.isGM) return;
       const incoming = message.payload?.state;
       if (incoming?.id) this.state = deepClone(incoming);
       if (!this.state?.id) return;
@@ -470,9 +479,6 @@ class ClashManager {
 
     if (!game.user.isGM) return;
     if (!this.state?.id || (message.clashId && message.clashId !== this.state.id)) return;
-
-    const sender = game.users.get(message.senderId);
-    if (!sender) return;
 
     switch (message.type) {
       case "LOCK_SIDE":
@@ -902,6 +908,7 @@ class ClashManager {
     await game.settings.set(MODULE_ID, "archive", archive);
     this.state = null;
     await this.persist();
+    this.app.close(true);
   }
 
   async postSummary() {
