@@ -1,0 +1,46 @@
+{
+  "id": "fbl-clash",
+  "title": "FBL-Clash",
+  "description": "Hidden simultaneous combat declarations and a shared resolution board for Forbidden Lands. Rules-light by design: the module never rolls or resolves game mechanics for you.",
+  "version": "0.1.1",
+  "authors": [
+    {
+      "name": "Mishokkka"
+    }
+  ],
+  "compatibility": {
+    "minimum": "13.341",
+    "verified": "13.351"
+  },
+  "relationships": {
+    "systems": [
+      {
+        "id": "forbidden-lands",
+        "type": "system",
+        "compatibility": {
+          "minimum": "13.0.5",
+          "verified": "13.0.5"
+        }
+      }
+    ]
+  },
+  "esmodules": [
+    "scripts/fbl-clash.js"
+  ],
+  "styles": [
+    "styles/fbl-clash.css"
+  ],
+  "languages": [
+    {
+      "lang": "ru",
+      "name": "Русский",
+      "path": "lang/ru.json"
+    },
+    {
+      "lang": "en",
+      "name": "English",
+      "path": "lang/en.json"
+    }
+  ],
+  "socket": true
+}
